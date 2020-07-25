@@ -14,8 +14,6 @@ node send.js hello_world hello
 
 ### work_queues
 
-commands
-
 ```bash
 node worker_1.js work_queues
 node worker_2.js work_queues
@@ -24,8 +22,6 @@ node new_task.js work_queues ..
 ```
 
 ### publish_subscribe
-
-commands
 
 ```bash
 node receive_logs_1.js publish_subscribe
