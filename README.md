@@ -3,7 +3,7 @@ RabbitMQ starter pack from [getstarted](https://www.rabbitmq.com/getstarted.html
 
 ## commands
 
-Run each command on a separate terminals.
+Run each command on a separate terminal.
 
 ### hello_world
 
@@ -21,4 +21,14 @@ node worker_1.js work_queues
 node worker_2.js work_queues
 node new_task.js work_queues .
 node new_task.js work_queues ..
+```
+
+### publish_subscribe
+
+commands
+
+```bash
+node receive_logs_1.js publish_subscribe
+node receive_logs_2.js publish_subscribe > pub_sub.log
+node emit_log.js publish_subscribe data
 ```
