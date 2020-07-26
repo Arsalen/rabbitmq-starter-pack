@@ -25,6 +25,7 @@ amqp.connect("amqp://localhost", function(error0, connection) {
                 channel.consume(q.queue, function(msg) {
 
                     console.log("[x] receive %s", msg.content);
+                    connection.close();
                     process.exit(0);
                 }, {
                     noAck: false
