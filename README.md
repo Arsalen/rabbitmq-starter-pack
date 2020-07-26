@@ -15,8 +15,8 @@ node send.js hello_world hello
 ### work_queues
 
 ```bash
-node worker_1.js work_queues
-node worker_2.js work_queues
+node worker.js work_queues
+node worker.js work_queues
 node new_task.js work_queues .
 node new_task.js work_queues ..
 ```
