@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.6.0"
+    "amqplib": "^0.6.0",
+    "cuid": "^2.1.8"
   }
 }
