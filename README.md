@@ -24,7 +24,16 @@ node new_task.js work_queues ..
 ### publish_subscribe
 
 ```bash
-node receive_logs_1.js publish_subscribe
-node receive_logs_2.js publish_subscribe > pub_sub.log
+node receive_logs.js publish_subscribe # [x] receive data
+node receive_logs.js publish_subscribe > pub_sub.log
 node emit_log.js publish_subscribe data
+```
+
+### routing
+
+```bash
+node receive_logs_direct.js info # [x] welcome to RabbitMQ starter-pack
+node receive_logs_direct.js error > direct.log
+node emit_log_direct.js info "welcome to RabbitMQ starter-pack"
+node emit_log_direct.js error "ouups, something went wrong"
 ```

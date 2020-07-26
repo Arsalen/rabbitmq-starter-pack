@@ -10,9 +10,10 @@ amqp.connect("amqp://localhost", function(error0, connection) {
         if(error1)
             throw error1;
 
-        let x = process.argv[2];
+        let x = 'direct_x';
+        let severity = process.argv[2];
 
-        channel.assertExchange(x, 'fanout', {
+        channel.assertExchange(x, 'direct', {
             durable: false
         })
 
@@ -23,15 +24,14 @@ amqp.connect("amqp://localhost", function(error0, connection) {
             if(error2)
                 throw error2;
 
-            channel.bindQueue(q.queue, x, '');
+            channel.bindQueue(q.queue, x, severity);
 
             channel.consume(q.queue, function(log) {
-
+                
                 console.log("[x] receive %s", log.content);
             }, {
                 noAck: true
             })
-
         })
     })
 })
